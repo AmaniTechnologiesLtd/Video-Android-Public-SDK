@@ -1,0 +1,52 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = "1.4.10"
+    repositories {
+        google()
+        jcenter()
+        maven {url 'https://maven.fabric.io/public'}
+        maven { url 'https://maven.google.com' }
+        maven { url "https://plugins.gradle.org/m2/"}
+        maven { url 'https://jitpack.io'}
+        flatDir{ dirs 'libs/' }
+
+        maven {
+            url "https://jfrog.amani.ai/artifactory/amani-sdk_video"
+            credentials {
+                username = "paras"
+                password = "K2nDebc4i7u*KRRX#G3h"
+            }
+        }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.1.1"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {url 'https://maven.fabric.io/public'}
+        maven { url 'https://maven.google.com' }
+        maven { url "https://plugins.gradle.org/m2/"}
+        maven { url 'https://jitpack.io'}
+        flatDir{ dirs 'libs/' }
+
+        maven {
+            url "https://jfrog.amani.ai/artifactory/amani-sdk_video"
+            credentials {
+                username = "paras"
+                password = "K2nDebc4i7u*KRRX#G3h"
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
